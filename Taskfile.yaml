@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  run:
+    desc: runs the server and pops up a tab with the link
+    cmds:
+      - go run app.go
+
+  open:
+    desc: runs the server and pops up a tab with the link
+    cmds:
+      - google-chrome --profile-directory "http://localhost:8080"
