@@ -21,6 +21,7 @@ func main() {
 	r.HandleFunc("/content", handleMasterContent).Methods("GET")
 	r.HandleFunc("/header-contacts", handleHeaderContacts).Methods("GET")
 	r.HandleFunc("/skills", handleSkills).Methods("GET")
+	r.HandleFunc("/experience", handleExperience).Methods("GET")
 	r.HandleFunc("/leftpane", handleLeftPane).Methods("GET")
 
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
@@ -30,6 +31,21 @@ func main() {
 
 func handleDefault(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/index.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+
+}
+func handleExperience(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/experience.html" // The file you want to read
 
 	// Read the contents of the file
 	contentBytes, err := os.ReadFile(filePath)
