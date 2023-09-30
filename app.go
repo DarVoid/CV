@@ -16,14 +16,19 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleDefault).Methods("GET")
 	r.HandleFunc("/header", handleHeader).Methods("GET")
-	r.HandleFunc("/footer", handleFooter).Methods("GET")
-	r.HandleFunc("/icons/{icon}", handleIcons).Methods("GET")
-	r.HandleFunc("/content", handleMasterContent).Methods("GET")
 	r.HandleFunc("/header-contacts", handleHeaderContacts).Methods("GET")
-	r.HandleFunc("/skills", handleSkills).Methods("GET")
-	r.HandleFunc("/experience", handleExperience).Methods("GET")
-	r.HandleFunc("/leftpane", handleLeftPane).Methods("GET")
 
+	r.HandleFunc("/leftpane", handleLeftPane).Methods("GET")
+	r.HandleFunc("/skills", handleSkills).Methods("GET")
+	r.HandleFunc("/traits", handleTraits).Methods("GET")
+	r.HandleFunc("/faq", handleFAQ).Methods("GET")
+
+	r.HandleFunc("/content", handleMasterContent).Methods("GET")
+	r.HandleFunc("/experience", handleExperience).Methods("GET")
+
+	r.HandleFunc("/footer", handleFooter).Methods("GET")
+
+	r.HandleFunc("/icons/{icon}", handleIcons).Methods("GET")
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
 
 	http.ListenAndServe(":8080", r)
@@ -89,6 +94,34 @@ func handleHeaderContacts(resp http.ResponseWriter, req *http.Request) {
 }
 func handleSkills(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/skills.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleTraits(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/traits.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleFAQ(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/faq.html" // The file you want to read
 
 	// Read the contents of the file
 	contentBytes, err := os.ReadFile(filePath)
