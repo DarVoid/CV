@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
+	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -15,7 +15,13 @@ const (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleDefault).Methods("GET")
-	r.HandleFunc("/yay", handleOther).Methods("GET")
+	r.HandleFunc("/header", handleHeader).Methods("GET")
+	r.HandleFunc("/footer", handleFooter).Methods("GET")
+	r.HandleFunc("/icons/{icon}", handleIcons).Methods("GET")
+	r.HandleFunc("/content", handleMasterContent).Methods("GET")
+	r.HandleFunc("/header-contacts", handleHeaderContacts).Methods("GET")
+	r.HandleFunc("/skills", handleSkills).Methods("GET")
+	r.HandleFunc("/leftpane", handleLeftPane).Methods("GET")
 
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
 
@@ -23,67 +29,107 @@ func main() {
 }
 
 func handleDefault(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/index.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
 	if req.Method == "GET" {
-		fmt.Fprintf(resp, `<!DOCTYPE html><html lang="en"><head><script src="https://unpkg.com/htmx.org@1.9.2"></script></head><body>
-		<script>
-		document.body.addEventListener('htmx', (event)={
-			if(event.detail.xhr.status == 404){
-				alert("page not found")
-			}
-		});
-		</script>
-		<div class="box">
-		<img width="170" height="170" src="/assets/duque.png"/> 
-		
-			<div> Jorge
-			</div>
-			<div> Duque
-			</div>
-		
-		<hr/>
-		</div>
-
-
-
-		<button hx-get="%v/yay" hx-swap="beforeend" hx-target="next .list"> click me
-			<img class="htmx-indicator" width="20" height="20" src="/assets/spin.gif"/>
-		</button>
-		<button hx-get="%v/yay2" hx-swap="beforeend" hx-target="next .list"> click me 2 </button>
-		<button hx-on="click: alert('Clicked!!!')"> click me 3</button>
-		<ul class="list">
-			<li>Item1</li>
-		</ul>
-		</body>
-		<style>
-		.htmx-indicator{
-			opacity:0;
-			transition: opacity 500ms ease-in;
-			display:none;
-		}
-		.htmx-request .htmx-indicator{
-			display:inline;
-			opacity:1;
-		}
-		.htmx-request.htmx-indicator{
-			opacity:1;
-			display:inline;
-		}
-		.box{
-			display: flex;
-			justify-content:flex-start;
-			flex-direction:column;
-		}
-		</style>
-		</html>`, BASEURL, BASEURL)
+		fmt.Fprintf(resp, "%v", content)
 	}
 
 }
-func handleOther(resp http.ResponseWriter, req *http.Request) {
-	if req.Method == "GET" {
-		time.Sleep(2 * time.Second) // DO NOT REMOVE MY SLEEP SO YOU CAN WATCH THE SPINNER
-		fmt.Fprintf(resp, `<li>hmm</li>`)
+func handleHeader(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/header.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
 	}
-	if req.Method == "POST" {
-		fmt.Fprintf(resp, "<p>POST</p>")
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleHeaderContacts(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/contacts.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleSkills(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/skills.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleMasterContent(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/master-content.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+func handleFooter(resp http.ResponseWriter, req *http.Request) {
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, `<li>footer</li>`)
+	}
+}
+func handleLeftPane(resp http.ResponseWriter, req *http.Request) {
+	filePath := "components/master-left-pane.html" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}
+
+func handleLinuxIcon(resp http.ResponseWriter, req *http.Request) {
+	filePath := "icons/linux-icon.svg" // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
 	}
 }

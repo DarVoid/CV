@@ -1,0 +1,145 @@
+/* Reset some default browser styles */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.image-container {
+    max-width: 70vh;
+    height: auto; 
+}
+
+.image-container img {
+    max-width: 30%;
+    height: auto;
+}
+
+.htmx-indicator {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    display: none;
+}
+.layout{
+    width: 100%;
+    height: 100%;
+}
+.htmx-request .htmx-indicator {
+    display: inline;
+    opacity: 1;
+}
+
+.htmx-request.htmx-indicator {
+    opacity: 1;
+    display: inline;
+}
+.my_name {
+    font-size: 3.5vh;
+    margin-top: -18vh;
+    margin-left: 24vh;
+    cursor: default;
+}
+.job_title {
+    font-size: 2.5vh;
+    margin-left: 30vh;
+    cursor: default;
+}
+.header-spread{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-card-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.right-padded{
+    padding-right: 8vh;
+}
+.left-padded{
+    padding-left: 8vh;
+}
+.half-left-padded{
+    padding-left: 2vh;
+}
+.reverse-half-left-padded{
+    padding-left: -4vh;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.font-white{
+    color: #fff;
+}
+/* ate aqui ta bom*/
+  /* Create the header */
+.master-header {
+    position: fixed;
+    width: 100%;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 20vh; /* 20% of the viewport height */
+    background-color: #333; /* Change the background color to your preference */
+    color: #fff; /* Change the text color to your preference */
+    z-index: 2; /* Ensure the header is above other content */
+}
+.master-box-hor {
+    height: 77vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+
+}
+.master-box-ver {
+    height: 90vh;
+    display: flex;
+    padding:2px;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+
+
+
+
+/* Create the content area */
+.master-content {
+    margin-top: 20vh; /* Make room for the fixed header */
+    padding: 20px; /* Add padding or margin as needed */
+    background-color: rgb(243, 155, 155); /* Change the background color to your preference */
+    width: 100%;
+    height: 100%;
+}
+.master-leftpane {
+    width: 30vh;
+    height: 100%;
+    margin-top: 20vh; /* Make room for the fixed header */
+    padding: 20px; /* Add padding or margin as needed */
+    background-color: rgb(74, 74, 133); /* Change the background color to your preference */
+    overflow-y: clip;
+}
+
+.icon{
+    display: inline; /* or use 'display: inline;' */
+}
+/* Create the footer */
+/* .master-footer {
+    position: fixed;
+    bottom: -10vh; 
+    left: 0;
+    right: 0;
+    height: 10vh; 
+    background-color: #333; 
+    color: #fff;
+    z-index: 2; 
+    transition: bottom 0.3s ease-in-out;
+} */
+
+/* Show the footer when scrolling up */
+/* body.show-footer .master-footer {
+    bottom: 0;
+} */
+
+  /* Responsive adjustments */

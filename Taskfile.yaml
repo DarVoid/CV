@@ -9,7 +9,8 @@ tasks:
   run:
     desc: runs the server and pops up a tab with the link
     cmds:
-      - go run app.go
+      - go run app.go icons.go
+      
 
   open:
     desc: runs the server and pops up a tab with the link
