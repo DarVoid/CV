@@ -71,6 +71,9 @@ a{
 .font-white{
     color: #fff;
 }
+.reg-size-font{
+    font-size: 1.5vh;
+}
 /* ate aqui ta bom*/
   /* Create the header */
 .master-header {
