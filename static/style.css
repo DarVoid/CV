@@ -74,6 +74,10 @@ a{
 .reg-size-font{
     font-size: 1.5vh;
 }
+.picture{
+    height: 75vh;
+    width: 75vh;
+}
 /* ate aqui ta bom*/
   /* Create the header */
 .master-header {
