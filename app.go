@@ -53,6 +53,7 @@ func handleDefault(resp http.ResponseWriter, req *http.Request) {
 
 }
 
+// TODO: fazer um componente para dar handle desta lista
 type Entries struct {
 	De          string
 	Ate         string
@@ -60,7 +61,7 @@ type Entries struct {
 	Company     string
 	Where       string
 	WhereLink   string
-	Description []string //TODO: fazer um componente para dar handle desta lista
+	Description []string
 	Stack       string
 }
 
@@ -78,8 +79,8 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 				"Developed, tested, and maintained a web App for Infrastructure as Code.",
 				"Created and managed GitHub actions and reusable workflows to ensure code quality.",
 				"Collaborated with Product Owner and Stakeholders to define project vision and roadmap.",
-				// "Assumed the role of scrum master (scrum knight) and developer, enabling the delivery of value and ensuring scrum events.",
 			},
+			// "Assumed the role of scrum master (scrum knight) and developer, enabling the delivery of value and ensuring scrum events.",
 			JobTitle:  "Fullstack Developer",
 			Company:   "Critical Techworks",
 			Where:     "Porto",

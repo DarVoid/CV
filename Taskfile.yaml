@@ -4,15 +4,16 @@ tasks:
   default:
     cmds:
       - task -l
+      - go fmt ./...
     silent: true
 
   run:
-    desc: runs the server and pops up a tab with the link
+    desc: runs the server 
     cmds:
       - go run app.go icons.go
-      
+
 
   open:
-    desc: runs the server and pops up a tab with the link
+    desc: opens the lint
     cmds:
       - google-chrome --profile-directory "http://localhost:8080"
