@@ -84,6 +84,11 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	}
 	formatString := string(contentBytes)
 	for _, entry := range entries {
+		resolvedList := []string{}
+		for _, item := range entry.Description {
+			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item)) 
+		}
+		container := descriptionResolveComponent("components/description-template-container.html", strings.Join(resolvedList, "\n"))
 		total = append(total,
 			fmt.Sprintf(formatString,
 				entry.De,
@@ -92,7 +97,7 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 				entry.Company,
 				entry.WhereLink,
 				entry.Where,
-				entry.Description,
+				container,
 				entry.Stack))
 	}
 	if req.Method == "GET" {
@@ -123,6 +128,12 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	}
 	formatString := string(contentBytes)
 	for _, entry := range entries {
+		resolvedList := []string{}
+		for _, item := range entry.Description {
+			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item)) 
+		}
+		container := descriptionResolveComponent("components/description-template-container.html", strings.Join(resolvedList, "\n"))
+		
 		total = append(total,
 			fmt.Sprintf(formatString,
 				entry.De,
@@ -131,7 +142,7 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 				entry.Company,
 				entry.WhereLink,
 				entry.Where,
-				entry.Description,
+				container,
 				entry.Stack))
 	}
 
@@ -139,4 +150,18 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(resp, "%v", strings.Join(total, "\n"))
 	}
 
+}
+
+
+// utils
+
+
+func descriptionResolveComponent(path, value string) string {
+	contentBytes, err := os.ReadFile(path)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	formatString := string(contentBytes)
+
+	return fmt.Sprintf(formatString, value)
 }
