@@ -23,7 +23,6 @@ func main() {
 	r.HandleFunc("/traits", handleTraits).Methods("GET")
 	r.HandleFunc("/faq", handleFAQ).Methods("GET")
 
-	r.HandleFunc("/content", handleMasterContent).Methods("GET")
 	r.HandleFunc("/experience-template", handleExperienceTemplate).Methods("GET")
 	r.HandleFunc("/education-template", handleEducationTemplate).Methods("GET")
 
@@ -37,7 +36,7 @@ func main() {
 }
 
 func handleDefault(resp http.ResponseWriter, req *http.Request) {
-	filePath := "components/index.html" // The file you want to read
+	filePath := "pages/index.html" // The file you want to read
 
 	// Read the contents of the file
 	contentBytes, err := os.ReadFile(filePath)
@@ -123,20 +122,6 @@ func handleTraits(resp http.ResponseWriter, req *http.Request) {
 }
 func handleFAQ(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/faq.html" // The file you want to read
-
-	// Read the contents of the file
-	contentBytes, err := os.ReadFile(filePath)
-	if err != nil {
-		fmt.Println("Error reading the file:", err)
-	}
-	content := string(contentBytes)
-
-	if req.Method == "GET" {
-		fmt.Fprintf(resp, "%v", content)
-	}
-}
-func handleMasterContent(resp http.ResponseWriter, req *http.Request) {
-	filePath := "components/master-content.html" // The file you want to read
 
 	// Read the contents of the file
 	contentBytes, err := os.ReadFile(filePath)
