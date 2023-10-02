@@ -1,16 +1,14 @@
-<div class="header-spread">
-    <div class="left-card-wrapper">
-        <div class="image-container">
+<header class="bg-purple-800 text-white p-4">
+    <div class="container mx-auto flex items-center">
+        <div class="w-1/5">
+            <!-- Your Profile Picture -->
+            <img class="rounded-full h-65 w-65" src="/assets/duque.png" hx-get="/pic/2" hx-swap="outerHTML" />
 
-            <img class="picture" src="/assets/duque.png" hx-get="/pic/1" hx-swap="outerHTML" />
-
-
-            <div class="my_name"> Jorge Duque</div>
-            <div class="job_title"> Developer</div>
         </div>
-        <div id="header-traits" class="header-traits" hx-get="/traits" hx-trigger="load"></div>
-        <!--TODO: meter isto tipo como esta no CV do overleaf-->
+        <!-- <div class="w-1/4" hx-get="/traits" hx-trigger="load"></div> -->
+        <div class="w-1/5">Jorge Duque</div>
+        <div class="w-2/5"></div>
+        <div class="w-1/5" hx-get="/header-contacts" hx-trigger="load"></div>
 
     </div>
-    <div id="header-contacts" class="header-contacts" hx-get="/header-contacts" hx-trigger="load"></div>
-</div>
+</header>

@@ -2,28 +2,43 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- scripts being imported straight away so functionality exists when/if it's called-->
+
 </head>
 
-<body>
-    <div class="layout">
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <div id="master-header" class="master-header" hx-get="/header" hx-trigger="load"></div>
 
-        <div id="master-header" class="master-header" hx-get="/header" hx-trigger="load"></div>
-        <div class="master-box-vert">
-            <div class="master-box-hor">
-                <div id="master-leftpane" class="master-leftpane" hx-get="/leftpane" hx-trigger="load"></div>
-                <div id="master-content" class="master-content" hx-get="/content" hx-trigger="load"></div>
 
+    <!-- Main Content Section -->
+    <div class="container mx-auto p-4 mt-4 flex">
+        <!-- Left Pane -->
+        <aside class="w-1/4 p-4 bg-white shadow-md rounded-md" hx-get="/leftpane" hx-trigger="load"></aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow p-4 bg-white shadow-md rounded-md">
+            <h2 class="text-2xl font-semibold mb-4">Professional Summary</h2>
+            <p>
+                I'm a technologist and a strong
+                believer that if you can dream it
+                we can build it.
+                I'm also a huge advocate for
+                pair programming and
+                automation.
+            </p>
+            <h2 class="text-2xl font-semibold mt-4 mb-4">Experience</h2>
+            <div id="content-experience" class="content-experience" hx-get="/experience-template" hx-trigger="load">
             </div>
-            <!-- <div id="master-footer" class="master-footer" hx-get="/footer" hx-trigger="load"></div> -->
-        </div>
+            <h2 class="text-2xl font-semibold mt-4 mb-4">Education</h2>
+            <div id="content-education" class="content-education" hx-get="/education-template" hx-trigger="load"></div>
 
+        </main>
     </div>
 </body>
-<link rel="stylesheet" href="http://localhost:8080/assets/style.css">
-<!-- Gorgeous style comming in as a regular asset xD-->
-<!-- styles at the end so content loads and the style is applied-->
 
 </html>

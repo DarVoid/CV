@@ -10,7 +10,8 @@ tasks:
   run:
     desc: runs the server 
     cmds:
-      - go run app.go icons.go
+      - go run app.go icons.go experience.go
+      
 
 
   open:
