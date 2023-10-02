@@ -32,7 +32,10 @@ func main() {
 	r.HandleFunc("/pic/{pic}", handlePic).Methods("GET")
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
 
-	http.ListenAndServe(":8080", r)
+	err := http.ListenAndServe(":8080", r)
+	if err != nil{
+		fmt.Println(err)
+	}
 }
 
 func handleDefault(resp http.ResponseWriter, req *http.Request) {

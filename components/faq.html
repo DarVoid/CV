@@ -1,17 +1,21 @@
 <div class="p-4 space-y-4">
     <div>
-        <h1 class="text-2xl font-bold  ">
-            <a href="#" class="hover:text-blue-500">FAQ</a>
+        <h1 class="text-2xl font-bold tracking-tighter">
+            FAQ
         </h1>
-        <h2 class="half-left-padded text-lg font-semibold  ">
+        <h2 class="text-lg font-semibold tracking-tighter">
             Currently Furthering knowledge on:
         </h2>
-        <div>
-            <a href="#" title="my projects sometimes become kinda big so I need clusters 🤔">
-                <div id="helm-icon" class="inline-block" hx-get="/icons/helm" hx-trigger="load"></div>
-                Helm
-            </a>
-        </div>
+
+        <a href="#" class="flex items-center gap-1">
+            <div id="go-icon" hx-get="/icons/go" hx-trigger="load"></div>
+            <span>Go</span>
+        </a>
+
+        <a href="#" title="my projects sometimes become kinda big so I need clusters 🤔">
+            <div id="helm-icon" class="inline-block" hx-get="/icons/helm" hx-trigger="load"></div>
+            Helm
+        </a>
         <div>
             <a href="#" title="my projects sometimes become kinda big so I need clusters 🤔">
                 <div id="kubernetes-icon" class="inline-block" hx-get="/icons/kubernetes" hx-trigger="load"></div>
@@ -39,7 +43,7 @@
         </div>
     </div>
     <div>
-        <h2 class="half-left-padded text-lg font-semibold  ">
+        <h2 class="half-left-padded text-lg font-semibold  tracking-tighter">
             Motivation?
         </h2>
         <div>

@@ -8,13 +8,11 @@ import (
 )
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	experienceTemplate := "components/experience-template.html" // The file you want to read
-	// exeperienceTemplate := "components/descriptions.html"        // The file you want to read
-	parentComponent := "components/table.html" // The file you want to read
 
 	var total []string
 	entries := []Entries{
 		{
-			De:  "3/2022",
+			De:  "03/2022",
 			Ate: "Present",
 			Description: []string{
 				"Developed, tested, and maintained a web App for Infrastructure as Code.",
@@ -84,22 +82,13 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 				entry.Description,
 				entry.Stack))
 	}
-	contentBytes, err = os.ReadFile(parentComponent)
-	if err != nil {
-		fmt.Println("Error reading the file:", err)
-	}
-	formatString = string(contentBytes)
-	resposta := fmt.Sprintf(formatString, "Experience", strings.Join(total, "\n"))
-
 	if req.Method == "GET" {
-		fmt.Fprintf(resp, "%v", resposta)
+		fmt.Fprintf(resp, "%v", strings.Join(total, "\n"))
 	}
 
 }
 func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	experienceTemplate := "components/education-template.html" // The file you want to read
-	// exeperienceTemplate := "components/descriptions.html"        // The file you want to read
-	parentComponent := "components/table.html" // The file you want to read
 
 	var total []string
 	entries := []Entries{
@@ -111,7 +100,7 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 			Company:     "Bachelor's Degree",
 			Where:       "IPT",
 			WhereLink:   "https://bit.ly/2IsX53k",
-			Stack:       "Ruby on rails, Angular, Travis, Docker, Vagrant, MatLab, Python, Java, CentOS, etc...",
+			Stack:       "Ruby on rails,Angular, Travis, Docker, Vagrant, MatLab, Python, Java, CentOS, etc...",
 		},
 	}
 
@@ -132,15 +121,9 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 				entry.Description,
 				entry.Stack))
 	}
-	contentBytes, err = os.ReadFile(parentComponent)
-	if err != nil {
-		fmt.Println("Error reading the file:", err)
-	}
-	formatString = string(contentBytes)
-	resposta := fmt.Sprintf(formatString, "Education", strings.Join(total, "\n"))
 
 	if req.Method == "GET" {
-		fmt.Fprintf(resp, "%v", resposta)
+		fmt.Fprintf(resp, "%v", strings.Join(total, "\n"))
 	}
 
 }

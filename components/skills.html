@@ -1,54 +1,43 @@
 <div class="p-4 space-y-4">
-    <h1 class="text-2xl font-bold  ">
-        <a href="#" class="hover:text-blue-500">Skills & Traits</a>
+    <h1 class="text-2xl font-bold tracking-tighter">
+        Skills & Traits
     </h1>
 
     <div>
-        <h2 class="text-lg font-semibold">
-            <a href="#" class="hover:text-blue-500">Languages & Core skills</a>
+        <h2 class="text-lg font-semibold tracking-tighter">
+            Languages & Core skills
         </h2>
 
-        <div class="flex items-center space-x-2">
-            <span class="reg-size-font">
-                <a href="#">
-                    <div id="go-icon" class="inline-block" hx-get="/icons/go" hx-trigger="load"></div>
-                    Go
-                </a>
-            </span>
-        </div>
+        <a href="#" class="flex items-center gap-1">
+            <div id="go-icon" hx-get="/icons/go" hx-trigger="load"></div>
+            <span>Go</span>
+        </a>
 
-        <div class="flex items-center space-x-2">
-            <span class="  reg-size-font">
-                <a href="#">
-                    <div id="graphql-icon" class="inline-block" hx-get="/icons/graphql" hx-trigger="load"></div>
-                    GraphQL
-                </a>
-            </span>
-        </div>
+        <a href="#" class="flex items-center gap-1">
+            <div id="graphql-icon" hx-get="/icons/graphql" hx-trigger="load"></div>
+            <span>GraphQL</span>
+        </a>
 
-        <div class="flex items-center space-x-2">
-            <span class="  reg-size-font">
-                <a href="#">
-                    <div id="javascript-icon" class="inline-block" hx-get="/icons/javascript" hx-trigger="load"></div>
-                    Javascript/Typescript
-                </a>
+        <a href="#" class="flex items-center gap-1">
+            <div id="javascript-icon" hx-get="/icons/javascript" hx-trigger="load"></div>
+            <span>
+                Javascript/Typescript
             </span>
-        </div>
+        </a>
 
-        <div class="flex items-center space-x-2">
-            <span class="reg-size-font">
-                <div id="docker-icon" class="inline-block" hx-get="/icons/docker" hx-trigger="load"></div>
-                <a href="#">Docker</a>
+        <a href="#" class="flex items-center gap-1">
+            <div id="docker-icon" hx-get="/icons/docker" hx-trigger="load"></div>
+            <span>
+                Docker
             </span>
-        </div>
+        </a>
 
-        <div class="flex items-center space-x-2">
-            <span class="  reg-size-font">
-                <a href="#" title="I refuse to work with any other operating system">
-                    <div id="linux-icon" class="inline-block" hx-get="/icons/linux" hx-trigger="load"></div>
-                    Linux
-                </a>
+        <a href="#" class="flex items-center gap-1" title="I refuse to work with any other operating system">
+            <div id="linux-icon" hx-get="/icons/linux" hx-trigger="load"></div>
+            <span>
+                Linux
             </span>
-        </div>
+        </a>
+
     </div>
 </div>
