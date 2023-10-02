@@ -1,16 +1,35 @@
 <!-- Contact Information -->
-<p class="text-lg"> May 28th, 1995 </p>
-<p class="text-lg"><a class="text-lg" target="_blank" title="Beyhond this place, there be dragons"
-        href="https://github.com/DarVoid">
-        <div id="github-icon" class="inline-block" hx-get="/icons/github" hx-trigger="load"></div>
-        DarVoid
-    </a></p>
-<p class="text-lg"><a class="text-lg" title="Call me maybe" href="#">
-        <div id="cell-icon" class="inline-block" hx-get="/icons/cell" hx-trigger="load"></div>
-        +351 933 11 05 05
+<ul class="flex flex-col gap-1">
+    <li class="tracking-tight text-purple-300 text-lg flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+        </svg>
+        <span>May 28th, 1995</span>
+    </li>
+    <li>
+        <a class="tracking-tight text-purple-300 text-lg flex items-center gap-1" target="_blank"
+            title="Beyhond this place, there be dragons" href="https://github.com/DarVoid">
+            <div id="github-icon" hx-get="/icons/github" hx-trigger="load"></div>
+            <span>DarVoid</span>
+        </a>
+    </li>
+    <li>
+        <a class="tracking-tight text-purple-300 text-lg flex items-center gap-1" title="Call me maybe"
+            href="tel:+351933110505">
+            <div id="cell-icon" hx-get="/icons/cell" hx-trigger="load"></div>
+            <span>
+                +351 933 11 05 05
+            </span>
+        </a>
+    </li>
+    <li>
+        <a class="tracking-tight text-purple-300 text-lg flex items-center gap-1" title="email"
+            href="mailto:jorgeraposoduque@gmail.com">
+            <div id="google-icon" hx-get="/icons/google" hx-trigger="load"></div>
+            jorgeraposoduque@gmail.com
+        </a>
+    </li>
 
-    </a></p>
-<p class="text-lg"><a class="text-lg" title="email" href="mailto:jorgeraposoduque@gmail.com">
-        <div id="google-icon" class="inline-block" hx-get="/icons/google" hx-trigger="load"></div>
-        jorgeraposoduque@gmail.com
-    </a></p>
+</ul>

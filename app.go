@@ -54,18 +54,6 @@ func handleDefault(resp http.ResponseWriter, req *http.Request) {
 
 }
 
-// TODO: fazer um componente para dar handle desta lista
-type Entries struct {
-	De          string
-	Ate         string
-	JobTitle    string
-	Company     string
-	Where       string
-	WhereLink   string
-	Description []string
-	Stack       string
-}
-
 
 func handleHeader(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/header.html" // The file you want to read

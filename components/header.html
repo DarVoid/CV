@@ -1,19 +1,20 @@
 <header class="bg-purple-800 text-white p-4">
-    <div class="container mx-auto flex items-center">
-        <div class="w-1/5">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <div class="flex flex-wrap items-center justify-center gap-12">
             <!-- Your Profile Picture -->
-            <img class="rounded-full h-45 w-45" src="/assets/duque.png" hx-get="/pic/2" hx-swap="outerHTML" />
+            <img class="rounded-full h-64 w-64" src="/assets/duque.png" hx-get="/pic/2" hx-swap="outerHTML" />
+
+            <!-- <div class="w-1/4" hx-get="/traits" hx-trigger="load"></div> -->
+            <div class="flex flex-col justify-center items-end gap-1">
+                <h1 class="whitespace-no-wrap sm:mt-16 text-4xl text-right font-semibold tracking-tight">
+                    Jorge Duque
+                </h1>
+                <h2 class="text-3xl text-purple-200 text-right tracking-tight">
+                    Developer
+                </h2>
+            </div>
         </div>
-        <!-- <div class="w-1/4" hx-get="/traits" hx-trigger="load"></div> -->
-        <div class="w-1/5">
-            <h1 class="mt-16 ml-16 text-4xl">
-                Jorge Duque
-            </h1>
-            <h1 class=" ml-16 text-3xl">
-                Developer
-            </h1>
-        </div>
-        <div class="w-2/5"></div>
-        <div class="w-1/5" hx-get="/header-contacts" hx-trigger="load"></div>
+        <div class="w-96 xl:block hidden" hx-get="/traits" hx-trigger="load"></div>
+        <div hx-get="/header-contacts" hx-trigger="load"></div>
     </div>
 </header>

@@ -6,6 +6,19 @@ import (
 	"os"
 	"strings"
 )
+
+// TODO: fazer um componente para dar handle desta lista
+type Entries struct {
+	De          string
+	Ate         string
+	JobTitle    string
+	Company     string
+	Where       string
+	WhereLink   string
+	Description []string
+	Stack       string
+}
+
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	experienceTemplate := "components/experience-template.html" // The file you want to read
 
