@@ -8,10 +8,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-const (
-	BASEURL = "http://localhost:8080"
-)
-
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleDefault).Methods("GET")
@@ -32,7 +28,7 @@ func main() {
 	r.HandleFunc("/pic/{pic}", handlePic).Methods("GET")
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
 
-	err := http.ListenAndServe(":8080", r)
+	err := http.ListenAndServe(":80", r)
 	if err != nil{
 		fmt.Println(err)
 	}
