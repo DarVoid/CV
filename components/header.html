@@ -1,15 +1,15 @@
 <header class="bg-purple-800 text-white p-4">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
-        <div class="relative flex flex-wrap items-center justify-center gap-12">
+        <div class="group relative flex flex-wrap items-center justify-center gap-12">
             <!-- Your Profile Picture -->
             <img class="hover:animate-spin rounded-full h-64 w-64" src="/assets/duque.png" hx-get="/pic/2"
                 hx-swap="outerHTML" />
 
-            <div class="absolute hover:animate-spin top-0 left-0 w-64 text-purple-700 ml-64 z-0" id="go-icon"
-                hx-get="/icons/spiner" hx-trigger="load"></div>
+            <div class="z-[0] sm:block hidden absolute group-hover:animate-spin top-0 left-0 w-64 text-purple-950 ml-64"
+                id="go-icon" hx-get="/icons/spiner" hx-trigger="load"></div>
 
             <!-- <div class="w-1/4" hx-get="/traits" hx-trigger="load"></div> -->
-            <div class="flex flex-col justify-center items-end gap-1">
+            <div class="z-[1] flex flex-col justify-center items-end gap-1">
                 <h1 class="whitespace-no-wrap sm:mt-16 text-4xl text-right font-semibold tracking-tight">
                     Jorge Duque
                 </h1>

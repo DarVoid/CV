@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge Duque</title>
+
+    <link rel="icon" href="/assets/spiner.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
     <script>const openModal = () => document.getElementById('overlay').classList.remove('hidden');</script>
@@ -14,9 +16,9 @@
 
 <body class="bg-gray-100 select-none">
     <!-- Header Section -->
-    <div hx-get="/header" hx-trigger="load"></div>
+    <div class="w-full" hx-get="/header" hx-trigger="load"></div>
     <!-- Main Content Section -->
-    <div class="container mx-auto p-4 mt-4 flex flex-row-reverse flex-wrap">
+    <div class=" container mx-auto p-4 mt-4 flex flex-row-reverse flex-wrap">
         <!-- Main Content -->
         <div class="flex-1 p-4 bg-white shadow-md rounded-md">
             <h2 class="text-2xl font-semibold mb-4 tracking-tighter">Professional Summary</h2>
@@ -49,6 +51,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 </body>
 
 </html>
