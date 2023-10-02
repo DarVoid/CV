@@ -7,6 +7,8 @@
     <title>Jorge Duque</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script>const openModal = () => document.getElementById('overlay').classList.remove('hidden');</script>
+    <script>const closeModal = () => document.getElementById('overlay').classList.add('hidden');</script>
 
 </head>
 
@@ -38,6 +40,14 @@
         <div class="w-full lg:w-1/4 p-4 bg-white shadow-md rounded-md" hx-get="/leftpane" hx-trigger="load"></div>
         <!-- Traits -->
         <div class="mt-6 w-full xl:hidden block p-4 bg-white shadow-md rounded-md" hx-get="/traits" hx-trigger="load">
+        </div>
+        <div id="overlay" hx-on="click:closeModal()"
+            class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center text-gray-200">
+            <div class="flex flex-col bg-gray-100 text-gray-900 p-4 rounded-lg shadow-lg border">
+                <div id="overlay-content">
+                    No content loaded
+                </div>
+            </div>
         </div>
 </body>
 

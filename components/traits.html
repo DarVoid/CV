@@ -1,6 +1,7 @@
 <div
     class="hover:opacity-100 opacity-0 transition-opacity duration-1000 flex h-full flex-col items-center justify-center">
-    <h4 class="text-purple-400 font-semibold tracking-tight text-2xl">
+    <h4 hx-on="click:openModal()" hx-get="/traits" hx-target="#overlay-content"
+        class="text-purple-400 font-semibold tracking-tight text-2xl">
         Traits
     </h4>
     <div class="p-8 mt-2 flex-1 w-full gap-2 flex-wrap flex items-center justify-center">
