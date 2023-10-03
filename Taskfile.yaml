@@ -18,3 +18,9 @@ tasks:
     desc: opens the lint
     cmds:
       - google-chrome --profile-directory "http://localhost:8080"
+
+  check-pid:
+    desc: opens the lint
+    cmds:
+      - lsof -i :8080
+      - echo "now kill pid of the app running on this port"
