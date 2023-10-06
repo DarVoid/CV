@@ -35,11 +35,9 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
 	var entries []Entries
-	var templatableEntries []EntriesTemplatable
 	
 	getEntries("data/experience.json", &entries)
 
-	getTemplatable(entries, &templatableEntries)
 	
 
 	var buf bytes.Buffer
@@ -50,7 +48,7 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	}
 	
 
-	for _, entry := range templatableEntries {
+	for _, entry := range entries {
 		
 		err = t.ExecuteTemplate(&buf, "experience", entry)
 		if err != nil {
@@ -67,11 +65,8 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
 	var entries []Entries
-	var templatableEntries []EntriesTemplatable
 	
 	getEntries("data/education.json", &entries)
-
-	getTemplatable(entries, &templatableEntries)
 	
 
 	var buf bytes.Buffer
@@ -80,9 +75,8 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	
 
-	for _, entry := range templatableEntries {
+	for _, entry := range entries {
 		
 		err = t.ExecuteTemplate(&buf, "education", entry)
 		if err != nil {

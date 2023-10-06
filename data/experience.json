@@ -2,13 +2,13 @@
     "De":  "03/2022",
     "Ate": "Present",
     "Description": [
-        "Developed, tested, and maintained a web App for Infrastructure as Code.",
+        "Developed, tested and maintained a web App for Infrastructure as Code.",
         "Created and managed GitHub actions and reusable workflows to ensure code quality.",
         "Collaborated with Product Owner and Stakeholders to define project vision and roadmap."
     ],
     "JobTitle":  "Fullstack Developer",
     "Company":   "Critical Techworks",
-    "Where":     "Porto",
+    "Where":     "Oporto",
     "WhereLink": "https://goo.gl/maps/pBKxevEVCuREvH3y8",
     "Stack":     "GraphQL, Golang, NodeJS, React, Python, AWS + Terraform, DynamoDB, Mongo, Kubernetes, React, Docker, Linux, GitHub"
 },
