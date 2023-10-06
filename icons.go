@@ -40,3 +40,19 @@ func handlePic(resp http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(resp, "%v", content)
 	}
 }
+func handleComponent(resp http.ResponseWriter, req *http.Request) {
+	vars := mux.Vars(req)
+	pic := vars["component"]
+	filePath := fmt.Sprintf("components/%v.html", pic) // The file you want to read
+
+	// Read the contents of the file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading the file:", err)
+	}
+	content := string(contentBytes)
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", content)
+	}
+}

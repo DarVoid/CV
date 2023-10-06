@@ -25,11 +25,12 @@ func main() {
 	r.HandleFunc("/footer", handleFooter).Methods("GET")
 
 	r.HandleFunc("/icons/{icon}", handleIcons).Methods("GET")
+	r.HandleFunc("/components/{component}", handleComponent).Methods("GET")
 	r.HandleFunc("/pic/{pic}", handlePic).Methods("GET")
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/"))))
 
-	err := http.ListenAndServe(":80", r)
-	if err != nil{
+	err := http.ListenAndServe(":8080", r)
+	if err != nil {
 		fmt.Println(err)
 	}
 }
@@ -49,7 +50,6 @@ func handleDefault(resp http.ResponseWriter, req *http.Request) {
 	}
 
 }
-
 
 func handleHeader(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/header.html" // The file you want to read

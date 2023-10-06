@@ -86,7 +86,7 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	for _, entry := range entries {
 		resolvedList := []string{}
 		for _, item := range entry.Description {
-			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item)) 
+			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item))
 		}
 		container := descriptionResolveComponent("components/description-template-container.html", strings.Join(resolvedList, "\n"))
 		total = append(total,
@@ -130,10 +130,10 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	for _, entry := range entries {
 		resolvedList := []string{}
 		for _, item := range entry.Description {
-			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item)) 
+			resolvedList = append(resolvedList, descriptionResolveComponent("components/description-template.html", item))
 		}
 		container := descriptionResolveComponent("components/description-template-container.html", strings.Join(resolvedList, "\n"))
-		
+
 		total = append(total,
 			fmt.Sprintf(formatString,
 				entry.De,
@@ -152,9 +152,7 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 
 }
 
-
 // utils
-
 
 func descriptionResolveComponent(path, value string) string {
 	contentBytes, err := os.ReadFile(path)
