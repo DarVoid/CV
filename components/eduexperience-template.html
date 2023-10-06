@@ -15,7 +15,7 @@
             </div>
             <div class="flex items-center gap-4">
                 <p>{{ .Company }}</p>
-                <a class="group" target="_blank" href="{{ .WhereLink }}">
+                <a class="group text-purple-900" target="_blank" href="{{ .WhereLink }}">
                     <div class="group-hover:animate-ping inline-block" hx-get="/icons/landmark" hx-trigger="load"></div>
                     {{ .Where }}
                 </a>
