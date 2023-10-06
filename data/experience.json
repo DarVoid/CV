@@ -3,8 +3,8 @@
     "Ate": "Present",
     "Description": [
         "Developed, tested and maintained a web App for Infrastructure as Code.",
-        "Created and managed GitHub actions and reusable workflows to ensure code quality.",
-        "Collaborated with Product Owner and Stakeholders to define project vision and roadmap."
+        "Established and oversaw GitHub actions and reusable workflows to guarantee code quality.",
+        "Engaged in collaboration with the Product Owner and Stakeholders to articulate the project's vision and roadmap."
     ],
     "JobTitle":  "Fullstack Developer",
     "Company":   "Critical Techworks",
@@ -16,7 +16,7 @@
     "De":  "10/2022",
     "Ate": "02/2023",
     "Description": [
-        "Developed event-driven micro-services to support a loan Web app for Portugal and Spain markets."
+        "Designed event-driven microservices to support a web application for loans targeting the Portugal and Spain markets."
     ],
     "JobTitle":  "Backend Developer",
     "Company":   "CapGemini",
@@ -28,8 +28,9 @@
     "De":  "04/2021",
     "Ate": "10/2022",
     "Description": [
-        "Planned and developed an app to manage Industrial Property.",
-        "Built CI/CD pipelines and containers for application deployment."
+        "Conceptualized and built an application for Industrial Property management.",
+        "Mentored an intern, offering guidance and sharing knowledge on architectural concepts and principles.",
+        "Constructed Continuous Integration/Continuous Deployment (CI/CD) pipelines and containers for deploying applications."
     ],
     "JobTitle":  "Fullstack Developer",
     "Company":   "Techframe, SA",
@@ -41,7 +42,9 @@
     "De":  "07/2020",
     "Ate": "03/2021",
     "Description": [
-        "Created ETL scripts and refactored APIs for internal frontend applications."
+        "Developed ETL (Extract, Transform, Load) scripts and optimized APIs for internal frontend applications.",
+        "Designed and developed dashboards to enhance stakeholders' data visualization capabilities.",
+        "Established APIs to be utilized by front-end applications in multiple projects."
     ],
     "JobTitle":  "Fullstack Developer",
     "Company":   "Softinsa, IBM",
