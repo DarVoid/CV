@@ -1,10 +1,16 @@
-[{  
-    "De":          "2017",
-    "Ate":         "2020",
-    "Description": ["Created bazingass"],
-    "JobTitle":    "Computer Engineering",
-    "Company":     "Bachelor's Degree",
-    "Where":       "IPT",
-    "WhereLink":   "https://bit.ly/2IsX53k",
-    "Stack":       "Ruby on Rails, Angular, Travis, Docker, Vagrant, MatLab, Python, Java, CentOS ..."
-}]
+[
+    {  
+        "De":          "2017",
+        "Ate":         "2020",
+        "Description": [
+            "Developed an NLP-based system for extracting temporal references, which was then used to create a visual chronological timeline displaying events.",
+            "Designed a Java-based blockchain system to delve into the principles of distributed computing, encryption, websockets, and RMI (Remote Method Invocation).",
+            "Developed a variety of programs covering a wide range of subjects and concepts."
+        ],
+        "JobTitle":    "Computer Engineering",
+        "Company":     "Bachelor's Degree",
+        "Where":       "IPT",
+        "WhereLink":   "https://bit.ly/2IsX53k",
+        "Stack":       "Ruby on Rails, Angular, Travis, Docker, Vagrant, MatLab, Python, Java, CentOS ..."
+    }
+]
