@@ -10,32 +10,21 @@
         <div class="flex items-center flex-wrap justify-between">
             <div class="w-full sm:w-auto">
                 <h1 class="text-2xl font-semibold tracking-tight text-purple-900">
-                    {{ .Jobtitle }}<!--Jobtitle-->
+                    {{ .JobTitle }}
                 </h1>
             </div>
             <div class="flex items-center gap-4">
-                <p>{{ .Company }}<!--Company--></p>
-                <a class="group" target="_blank" href="{{ .Wherelink }}">
+                <p>{{ .Company }}</p>
+                <a class="group" target="_blank" href="{{ .WhereLink }}">
                     <div class="group-hover:animate-ping inline-block" hx-get="/icons/landmark" hx-trigger="load"></div>
-                    {{ .Where }} <!--Where-->
+                    {{ .Where }}
                 </a>
             </div>
         </div>
         <div class="mt-2">
             <div>
                 <div class="col-span-4 text-gray-900 leading-tight">
-                    {{ .Description }} <!--Description-->
-                    <!-- <ul>
-                    <li>
-                        Developed, tested, and maintained a web App for Infrastructure as Code.
-                    </li>
-                    <li>
-                        Created and managed GitHub actions and reusable workflows to ensure code quality.
-                    </li>
-                    <li>
-                        Collaborated with Product Owner and Stakeholders to define project vision and roadmap.
-                    </li>
-                </ul> -->
+                    {{ .Description }}
                 </div>
             </div>
             <div class="tracking-tight mt-1 text-gray-500 text-sm">
