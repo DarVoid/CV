@@ -6,7 +6,13 @@
     </h4>
     <div class="p-8 mt-2 flex-1 w-full gap-2 flex-wrap flex items-center justify-center">
 
+        {{range . }}
         <div class="bg-purple-700 md:rounded-full rounded-lg px-3 py-1 shadow text-purple-200">
+            {{ . }}
+        </div>
+        {{end}}
+
+        <!-- <div class="bg-purple-700 md:rounded-full rounded-lg px-3 py-1 shadow text-purple-200">
             creative
         </div>
         <div class="bg-purple-700 md:rounded-full rounded-lg px-3 py-1 shadow text-purple-200">
@@ -32,6 +38,6 @@
         </div>
         <div class="bg-purple-700 md:rounded-full rounded-lg px-3 py-1 shadow text-purple-200">
             adaptable
-        </div>
+        </div> -->
     </div>
 </div>

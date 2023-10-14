@@ -21,24 +21,22 @@ type Entries struct {
 	Stack       string   `json:"Stack"`
 }
 type EntriesTemplatable struct {
-	De          string   
-	Ate         string   
-	JobTitle    string   
-	Company     string   
-	Where       string   
-	WhereLink   string   
-	Description string 
-	Stack       string   
+	De          string
+	Ate         string
+	JobTitle    string
+	Company     string
+	Where       string
+	WhereLink   string
+	Description string
+	Stack       string
 }
 
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
 	var entries []Entries
-	
-	getEntries("data/experience.json", &entries)
 
-	
+	getEntries("data/experience.json", &entries)
 
 	var buf bytes.Buffer
 
@@ -46,10 +44,9 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	
 
 	for _, entry := range entries {
-		
+
 		err = t.ExecuteTemplate(&buf, "experience", entry)
 		if err != nil {
 			fmt.Println(err)
@@ -60,14 +57,12 @@ func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(resp, "%v", &buf)
 	}
 
-
 }
 func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
 	var entries []Entries
-	
+
 	getEntries("data/education.json", &entries)
-	
 
 	var buf bytes.Buffer
 
@@ -77,7 +72,7 @@ func handleEducationTemplate(resp http.ResponseWriter, req *http.Request) {
 	}
 
 	for _, entry := range entries {
-		
+
 		err = t.ExecuteTemplate(&buf, "education", entry)
 		if err != nil {
 			fmt.Println(err)
@@ -116,30 +111,40 @@ func getEntries(path string, entries *[]Entries) {
 		return
 	}
 }
+func handleTraits(resp http.ResponseWriter, req *http.Request) {
+	component := getComponent("components/traits.html") // The file you want to read
+	var traits []string
 
-func getTemplatable(entries []Entries, to *[]EntriesTemplatable)  {
-	description := getComponent("components/description-template.html") // The file you want to read
-	t2, err := template.New("description").Parse(description)
+	getTraits("data/traits.json", &traits)
+
+	var buf bytes.Buffer
+
+	t, err := template.New("traits").Parse(component)
 	if err != nil {
 		fmt.Println(err)
 	}
-	for _, entry := range entries {
-		var buf2 bytes.Buffer
-		for _, val := range entry.Description{
-			err := t2.ExecuteTemplate(&buf2, "description", val)
-			if err != nil{
-				fmt.Println(err)
-			}
+	err = t.ExecuteTemplate(&buf, "traits", traits)
+		if err != nil {
+			fmt.Println(err)
 		}
-		*(to) = append(*(to), EntriesTemplatable{
-			De: entry.De,
-			Ate: entry.Ate,
-			JobTitle: entry.JobTitle,
-			Company: entry.Company,
-			Where: entry.Where,
-			WhereLink: entry.WhereLink,
-			Stack: entry.Stack,
-			Description: buf2.String(),
-		})
+
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", &buf)
+	}
+}
+func getTraits(path string, traits *[]string) {
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Error opening JSON file:", err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&traits)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
 	}
 }

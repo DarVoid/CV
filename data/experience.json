@@ -8,7 +8,7 @@
     ],
     "JobTitle":  "Fullstack Developer",
     "Company":   "Critical Techworks",
-    "Where":     "Oporto",
+    "Where":     "Porto",
     "WhereLink": "https://goo.gl/maps/pBKxevEVCuREvH3y8",
     "Stack":     "GraphQL, Golang, NodeJS, React, Python, AWS + Terraform, DynamoDB, Mongo, Kubernetes, React, Docker, Linux, GitHub"
 },
@@ -20,7 +20,7 @@
     ],
     "JobTitle":  "Backend Developer",
     "Company":   "CapGemini",
-    "Where":     "Lisbon",
+    "Where":     "Lisboa",
     "WhereLink": "https://bit.ly/3DUpYy6",
     "Stack":     "Golang, Postgres, RabbitMQ, Docker, GCP, Kubernetes, Travis"
 },

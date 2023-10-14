@@ -93,20 +93,7 @@ func handleSkills(resp http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(resp, "%v", content)
 	}
 }
-func handleTraits(resp http.ResponseWriter, req *http.Request) {
-	filePath := "components/traits.html" // The file you want to read
 
-	// Read the contents of the file
-	contentBytes, err := os.ReadFile(filePath)
-	if err != nil {
-		fmt.Println("Error reading the file:", err)
-	}
-	content := string(contentBytes)
-
-	if req.Method == "GET" {
-		fmt.Fprintf(resp, "%v", content)
-	}
-}
 func handleFAQ(resp http.ResponseWriter, req *http.Request) {
 	filePath := "components/faq.html" // The file you want to read
 
