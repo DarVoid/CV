@@ -3,30 +3,12 @@
         <h2 class="text-lg font-semibold tracking-tighter text-purple-900">
             Motivation
         </h2>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="Ensuring financial stability is a crucial aspect of my career journey. I'm determined to secure a role that not only values my skills and contributions but also provides the financial security needed to achieve my life goals. I believe that a stable foundation enables me to excel both professionally and personally.">
-            <div class="group-hover:animate-bounce" hx-get="/icons/money-bags" hx-trigger="load"></div>
-            <span>Financial Stability and Compensation</span>
+        {{range .Motivations}}
+        <a href="#" class="flex items-center gap-1 group" title="{{ .Explanation }}">
+            <div class="group-hover:animate-bounce" hx-get="/icons/{{ .Icon }}" hx-trigger="load"></div>
+            <span>{{.What}}</span>
         </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="I'm driven by the pursuit of personal growth and thrive when faced with challenges. I'm on the lookout for roles that empower me to learn, adapt, and overcome obstacles. Embracing challenges isn't just a job requirement for me; it's the fuel that propels my career forward.">
-            <div class="group-hover:animate-bounce" hx-get="/icons/self-improve" hx-trigger="load"></div>
-            <span>Professional Growth and Challenges</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="I believe that meaningful work should result in tangible value, wherever that value may be found. I'm determined to contribute my skills and efforts to roles that create a practical and lasting impact, wherever the opportunity arises.">
-            <div class="group-hover:animate-bounce" hx-get="/icons/nice-things" hx-trigger="load"></div>
-            <span>Impact and Meaningful Work</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="I believe in the power of choosing the best tools for each unique challenge. My approach to technology is pragmatic, centered on selecting the most suitable tools and methodologies to accomplish specific tasks efficiently and effectively. I'm committed to optimizing processes and outcomes through thoughtful technology choices.">
-            <div class="group-hover:animate-bounce" hx-get="/icons/devops" hx-trigger="load"></div>
-            <span>Technology and Tools</span>
-        </a>
+        {{end}}
 
 
     </div>
@@ -35,40 +17,13 @@
             Exploring
         </h2>
 
-        <a href="#" class="flex items-center gap-1 group">
-            <div class="group-hover:animate-bounce" id="go-icon" hx-get="/icons/go" hx-trigger="load"></div>
-            <span>Go</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="my projects sometimes become kinda big so I need clusters 🤔">
-            <div class="group-hover:animate-bounce" id="helm-icon" hx-get="/icons/helm" hx-trigger="load"></div>
-            <span>Helm</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="my projects sometimes become kinda big so I need clusters 🤔">
-            <div class="group-hover:animate-bounce" id="kubernetes-icon" hx-get="/icons/kubernetes" hx-trigger="load">
+        {{range .Exploring}}
+        <a href="#" class="flex items-center gap-1 group" title="{{ .Title}}">
+            <div class="group-hover:animate-bounce" id="{{.Icon}}-icon" hx-get="/icons/{{.Icon}}" hx-trigger="load">
             </div>
-            <span>Kubernetes</span>
+            <span>{{ .Name}}</span>
         </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="I just like their documentation 📚 better in comparison to AWS and Azure...">
-            <div class="group-hover:animate-bounce" id="gcp-icon" hx-get="/icons/gcp" hx-trigger="load"></div>
-            <span>GCP</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group" title="Dope Stuuuuuuuuff 😀 weeee">
-            <div class="group-hover:animate-bounce" id="htmx-icon" hx-get="/icons/htmx" hx-trigger="load"></div>
-            <span>HTMX</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group"
-            title="I know... 😮‍💨 I know it sounds basic 👀 but with HTMX I wanted to get back to basics and try to implement minimal beautiful performant interfaces">
-            <div class="group-hover:animate-bounce" id="css-icon" hx-get="/icons/css" hx-trigger="load"></div>
-            <span>CSS</span>
-        </a>
+        {{end}}
     </div>
 
     <div>
@@ -76,15 +31,13 @@
             class="text-lg font-semibold tracking-tighter text-purple-900">
             Languages
         </h2>
+
+        {{range .Languages}}
         <a href="#" class="flex items-center gap-1 group">
             <span>
-                Portuguese: native
+                {{ .Language}}: {{ .Proficiency}}
             </span>
         </a>
-        <a href="#" class="flex items-center gap-1 group">
-            <span>
-                English: native
-            </span>
-        </a>
+        {{end}}
     </div>
 </div>

@@ -26,6 +26,24 @@ type Skills struct {
 	Title string `json:"title"`
 }
 
+type Language struct{
+	Language string `json:"language"`
+	Proficiency string `json:"proficiency"`
+}
+
+type Motivation struct{
+	What string `json:"what"`
+	Icon string `json:"icon"`
+	Explanation string `json:"explanation"`
+	Video string `json:"video"`
+}
+
+type Faq struct{
+	Languages []Language
+	Motivations []Motivation
+	Exploring []Skills
+}
+
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
@@ -136,6 +154,41 @@ func handleSkills(resp http.ResponseWriter, req *http.Request) {
 	}
 }
 
+
+func handleFAQ(resp http.ResponseWriter, req *http.Request) {
+	component := getComponent("components/faq.html") // The file you want to read
+	
+	var languages []Language
+	getLanguages("data/languages.json", &languages)
+	var motivations []Motivation
+	getMotivations("data/motivation.json", &motivations)
+	var exploring []Skills
+	getSkills("data/exploring.json", &exploring)
+	faqs := Faq{
+		Languages: languages,
+		Motivations: motivations,
+		Exploring: exploring,
+	}
+
+	var buf bytes.Buffer
+	
+	t, err := template.New("faq").Parse(component)
+	if err != nil {
+		fmt.Println(err)
+	}
+	err = t.ExecuteTemplate(&buf, "faq", faqs)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", &buf)
+	}
+}
+
+
+
+
 func getEntries(path string, entries *[]Entries) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -181,3 +234,34 @@ func getSkills(path string, skills *[]Skills) {
 		return
 	}
 }
+func getLanguages(path string, skills *[]Language) {
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Error opening JSON file:", err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&skills)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
+	}
+}
+func getMotivations(path string, skills *[]Motivation) {
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Error opening JSON file:", err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&skills)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
+	}
+}
+

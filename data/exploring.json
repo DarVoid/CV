@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "go",
+        "name": "Go",
+        "title": ""
+    },
+    {
+        "icon": "helm",
+        "name": "Helm",
+        "title": "my projects sometimes become kinda big so I need clusters 🤔"
+    },
+    {
+        "icon": "kubernetes",
+        "name": "Kubernetes",
+        "title": "my projects sometimes become kinda big so I need clusters 🤔"
+    },
+    {
+        "icon": "gcp",
+        "name": "GCP",
+        "title": "I just like their documentation 📚 better in comparison to AWS and Azure..."
+    },
+    {
+        "icon": "htmx",
+        "name": "HTMX",
+        "title": "Dope Stuuuuuuuuff 😀 weeee (this CV was made using htmx)"
+    },
+    {
+        "icon": "css",
+        "name": "CSS",
+        "title": "I know... 😮‍💨 I know it sounds basic 👀 but with HTMX I wanted to get back to basics and try to implement minimal beautiful performant interfaces"
+    }
+]

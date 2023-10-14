@@ -1,0 +1,26 @@
+[
+    {
+        "what": "Financial Stability and Compensation",
+        "explanation": "Ensuring financial stability is a crucial aspect of my career journey. I'm determined to secure a role that not only values my skills and contributions but also provides the financial security needed to achieve my life goals. I believe that a stable foundation enables me to excel both professionally and personally.",
+        "icon":"money-bags",
+        "video":""
+    },
+    {
+        "what": "Professional Growth and Challenges",
+        "explanation": "I'm driven by the pursuit of personal growth and thrive when faced with challenges. I'm on the lookout for roles that empower me to learn, adapt, and overcome obstacles. Embracing challenges isn't just a job requirement for me; it's the fuel that propels my career forward.",
+        "icon":"self-improve",
+        "video":""
+    },
+    {
+        "what": "Impact and Meaningful Work",
+        "explanation": "I believe that meaningful work should result in tangible value, wherever that value may be found. I'm determined to contribute my skills and efforts to roles that create a practical and lasting impact, wherever the opportunity arises.",
+        "icon":"nice-things",
+        "video":""
+    },
+    {
+        "what": "Technology and Tools",
+        "explanation": "I believe in the power of choosing the best tools for each unique challenge. My approach to technology is pragmatic, centered on selecting the most suitable tools and methodologies to accomplish specific tasks efficiently and effectively. I'm committed to optimizing processes and outcomes through thoughtful technology choices.",
+        "icon":"devops",
+        "video":""
+    }
+]
