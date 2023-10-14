@@ -85,21 +85,6 @@ func getComponent(path string) string {
 	return component
 }
 
-func getEntries(path string, entries *[]Entries) {
-	file, err := os.Open(path)
-	if err != nil {
-		fmt.Println("Error opening JSON file:", err)
-		return
-	}
-	defer file.Close()
-
-	decoder := json.NewDecoder(file)
-	err = decoder.Decode(&entries)
-	if err != nil {
-		fmt.Println("Error decoding JSON:", err)
-		return
-	}
-}
 func handleTraits(resp http.ResponseWriter, req *http.Request) {
 	component := getComponent("components/traits.html") // The file you want to read
 	var traits []string
@@ -119,6 +104,22 @@ func handleTraits(resp http.ResponseWriter, req *http.Request) {
 
 	if req.Method == "GET" {
 		fmt.Fprintf(resp, "%v", &buf)
+	}
+}
+
+func getEntries(path string, entries *[]Entries) {
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Error opening JSON file:", err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&entries)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
 	}
 }
 func getTraits(path string, traits *[]string) {
