@@ -19,6 +19,22 @@ tasks:
     cmds:
       - google-chrome --profile-directory "http://localhost:8080"
 
+  docker-b:
+    desc: build docker image with the latest code
+    cmds:
+      - docker build -t my-cv:latest .
+      - task:  docker-cleanse
+
+  docker-r:
+    desc: runs docker image with the latest changes
+    cmds:
+      - docker run -p 8080:8080  my-cv:latest
+
+  docker-cleanse:
+    desc: removes dangling images
+    cmds:
+      - docker image prune --filter "dangling=true"
+
   check-pid:
     desc: opens the lint
     cmds:

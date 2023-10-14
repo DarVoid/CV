@@ -9,7 +9,6 @@ import (
 	"text/template"
 )
 
-// TODO: fazer um componente para dar handle desta lista
 type Entries struct {
 	De          string   `json:"De"`
 	Ate         string   `json:"Ate"`
@@ -19,16 +18,6 @@ type Entries struct {
 	WhereLink   string   `json:"WhereLink"`
 	Description []string `json:"Description"`
 	Stack       string   `json:"Stack"`
-}
-type EntriesTemplatable struct {
-	De          string
-	Ate         string
-	JobTitle    string
-	Company     string
-	Where       string
-	WhereLink   string
-	Description string
-	Stack       string
 }
 
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
@@ -124,10 +113,9 @@ func handleTraits(resp http.ResponseWriter, req *http.Request) {
 		fmt.Println(err)
 	}
 	err = t.ExecuteTemplate(&buf, "traits", traits)
-		if err != nil {
-			fmt.Println(err)
-		}
-
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	if req.Method == "GET" {
 		fmt.Fprintf(resp, "%v", &buf)
