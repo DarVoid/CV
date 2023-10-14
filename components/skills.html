@@ -10,37 +10,14 @@
             Languages & Core Skills
         </h2>
 
-        <a href="#" class="flex items-center gap-1 group">
-            <div class="group-hover:animate-bounce" id="go-icon" hx-get="/icons/go" hx-trigger="load"></div>
-            <span>Go</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group">
-            <div class="group-hover:animate-bounce" id="graphql-icon" hx-get="/icons/graphql" hx-trigger="load"></div>
-            <span>GraphQL</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-1 group">
-            <div class="group-hover:animate-bounce" id="javascript-icon" hx-get="/icons/javascript" hx-trigger="load">
+        {{range .}}
+        <div class="w-full leading-snug text-gray-900 tracking-wide"></div>
+        <a href="#" class="flex items-center gap-1 group" title="{{ .Title}}">
+            <div class="group-hover:animate-bounce" id="{{ .Icon}}-icon" hx-get="/icons/{{.Icon}}" hx-trigger="load">
             </div>
-            <span>
-                Javascript/Typescript
-            </span>
+            <span>{{ .Name}}</span>
         </a>
+        {{end}}
 
-        <a href="#" class="flex items-center gap-1 group">
-            <div class="group-hover:animate-bounce" id="docker-icon" hx-get="/icons/docker" hx-trigger="load"></div>
-            <span>
-                Docker
-            </span>
-        </a>
-
-
-        <a href="#" class="flex items-center gap-1 group" title="I refuse to work with any other operating system">
-            <div class="group-hover:animate-bounce" id="linux-icon" hx-get="/icons/linux" hx-trigger="load"></div>
-            <span>
-                Linux
-            </span>
-        </a>
     </div>
 </div>

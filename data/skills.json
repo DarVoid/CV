@@ -1,0 +1,27 @@
+[
+    {
+        "icon": "go",
+        "name": "Go",
+        "title": ""
+    },
+    {
+        "icon": "graphql",
+        "name": "GraphQL",
+        "title": ""
+    },
+    {
+        "icon": "javascript",
+        "name": "Javascript/Typescript",
+        "title": ""
+    },
+    {
+        "icon": "docker",
+        "name": "Docker",
+        "title": ""
+    },
+    {
+        "icon": "linux",
+        "name": "linux",
+        "title": "I refuse to work with any other operating system"
+    }
+]

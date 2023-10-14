@@ -20,6 +20,12 @@ type Entries struct {
 	Stack       string   `json:"Stack"`
 }
 
+type Skills struct {
+	Name  string `json:"name"`
+	Icon  string `json:"icon"`
+	Title string `json:"title"`
+}
+
 func handleExperienceTemplate(resp http.ResponseWriter, req *http.Request) {
 
 	component := getComponent("components/eduexperience-template.html") // The file you want to read
@@ -107,6 +113,29 @@ func handleTraits(resp http.ResponseWriter, req *http.Request) {
 	}
 }
 
+func handleSkills(resp http.ResponseWriter, req *http.Request) {
+
+	component := getComponent("components/skills.html") // The file you want to read
+	var skills []Skills
+
+	getSkills("data/skills.json", &skills)
+
+	var buf bytes.Buffer
+
+	t, err := template.New("skills").Parse(component)
+	if err != nil {
+		fmt.Println(err)
+	}
+	err = t.ExecuteTemplate(&buf, "skills", skills)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	if req.Method == "GET" {
+		fmt.Fprintf(resp, "%v", &buf)
+	}
+}
+
 func getEntries(path string, entries *[]Entries) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -132,6 +161,21 @@ func getTraits(path string, traits *[]string) {
 
 	decoder := json.NewDecoder(file)
 	err = decoder.Decode(&traits)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
+	}
+}
+func getSkills(path string, skills *[]Skills) {
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Error opening JSON file:", err)
+		return
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&skills)
 	if err != nil {
 		fmt.Println("Error decoding JSON:", err)
 		return
