@@ -28,7 +28,7 @@ tasks:
   docker-r:
     desc: runs docker image with the latest changes
     cmds:
-      - docker run -p 8080:8080  my-cv:latest &
+      - docker run -p 8080:8080  my-cv:latest
 
   docker-cleanse:
     desc: removes dangling images
