@@ -5,7 +5,8 @@
     "name" :"Commander: The Lost Caverns of Ixalan: \"Explorers of the Deep\" Commander Deck",
     "image": "https://product-images.s3.cardmarket.com/18/734173/734173.jpg",
     "description": "merfolk deck, ton of value, tons of synergies, has like 4-5 10euro cards"
-  }, {
+  }, 
+  {
     "type": "pre-con-deck",
     "total_price" : 29,
     "name" :"Commander: Wilds of Eldraine: \"Virtue and Valor\" Commander Deck",
@@ -13,10 +14,24 @@
     "description": "aura deck, nice commanders, karametra potential? has sun titan, white draw "
   },
   {
+    "type": "pre-con-deck",
+    "total_price" : 33,
+    "name" :"Commander: March of the Machine: \"Call for Backup\" Commander",
+    "image": "https://product-images.s3.cardmarket.com/18/698075/698075.jpg",
+    "description": "+1/+1 counters planechase cards, fox commander handsy "
+  },
+  {
     "type": "precon-deck",
     "total_price" : 46,
     "name" :"Commander: Wilds of Eldraine: \"Fae Dominion\" Commander Deck",
     "image": "https://product-images.s3.cardmarket.com/18/719686/719686.jpg",
     "description": "fae deck, tons of synergies, #ourTurn, nice new artifact manarock blue"
+  },
+  {
+    "type": "precon-deck",
+    "total_price" : 63,
+    "name" :"Universes Beyond: Fallout: \"Mutant Menace\" Commander Deck",
+    "image": "https://product-images.s3.cardmarket.com/18/745334/745334.jpg",
+    "description": "no idea, hopefully mutate comes back"
   },
 ]
