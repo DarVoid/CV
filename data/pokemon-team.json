@@ -86,7 +86,7 @@
         "special-defense": 6
       }
     ],
-  "moves": ["Poison Fang", "Crunch", "Cross-Poison", "Leech Life"],
+  "moves": ["Earthquake", "toxic", "protect", "dragon tail"],
     "item": "rocky helmet"
   },
   
