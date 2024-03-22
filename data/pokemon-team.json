@@ -2,7 +2,7 @@
   {
     "pkmNo": 26,
     "pokemon": "Raichu",
-    "ability": "linghtning-rod"
+    "ability": "linghtning-rod",
     "EVStrat": [
       {
         "attack":252,
@@ -10,6 +10,21 @@
         "hp":6
       }
     ],
-  "moves": ["thunderpunch", "thief", "protect", "trailblaze"]
+  "moves": ["thunderpunch", "thief", "protect", "trailblaze"],
+    "item": "quick claw"
+  },
+  {
+    "pkmNo": 184,
+    "pokemon": "Azumarill",
+    "ability": "huge power",
+    "EVStrat": [
+      {
+        "attack":252,
+        "speed":252,
+        "hp":6
+      }
+    ],
+  "moves": ["aqua jet", "play rough", "bellydrum", "liquidation"],
+    "item": "sitrus berry"
   }
 ]
