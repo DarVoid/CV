@@ -1,0 +1,15 @@
+[
+  {
+    "pkmNo": 26,
+    "pokemon": "Raichu",
+    "ability": "linghtning-rod"
+    "EVStrat": [
+      {
+        "attack":252,
+        "speed":252,
+        "hp":6
+      }
+    ],
+  "moves": ["thunderpunch", "thief", "protect", "trailblaze"]
+  }
+]
