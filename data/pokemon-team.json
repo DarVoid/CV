@@ -1,94 +1,64 @@
-[
-  {
-    "pkmNo": 26,
-    "pokemon": "Raichu",
-    "ability": "linghtning-rod",
-    "nature": "",
-    "EVStrat": [
-      {
-        "attack":252,
-        "speed":252,
-        "hp":6
-      }
-    ],
-  "moves": ["thunderpunch", "thief", "protect", "trailblaze"],
-    "item": "quick claw"
-  },
-  {
-    "pkmNo": 494,
-    "pokemon": "Victini",
-    "ability": "victory-star",
-    "nature": "",
-    "EVStrat": [
-      {
-        "special-attack":252,
-        "speed":252,
-        "hp":6
-      }
-    ],
-  "moves": ["flamethrower", "searing shot", "Psyshock", "Psychic"],
-    "item": "quick claw"
-  },
-  {
-    "pkmNo": 184,
-    "pokemon": "Azumarill",
-    "ability": "huge power",
-    "nature": "",
-    "EVStrat": [
-      {
-        "attack":252,
-        "speed":252,
-        "hp":6
-      }
-    ],
-  "moves": ["aqua jet", "play rough", "bellydrum", "liquidation"],
-    "item": "sitrus berry"
-  },
-   {
-    "pkmNo": 184,
-    "pokemon": "Magearna",
-    "ability": "Soul-Heart",
-    "nature": "",
-    "EVStrat": [
-      {
-        "special-attack":252,
-        "speed":252,
-        "hp":6
-      }
-    ],
-  "moves": ["Steel Beam", "Fleur Cannon", "Misty Explosion", "Energy Ball"],
-    "item": "life-orb"
-  },
-   {
-    "pkmNo": 184,
-    "pokemon": "Drapion",
-    "ability": "Snipe",
-    "nature": "",
-    "EVStrat": [
-      {
-        "attack":252,
-        "speed":252,
-        "hp":6
-      }
-    ],
-  "moves": ["Poison Fang", "Crunch", "Cross-Poison", "Leech Life"],
-    "item": "assault vest"
-  },
-  {
-    "pkmNo": 445,
-    "pokemon": "Garchomp",
-    "ability": "rough skin",
-    "nature": "",
-    "EVStrat": [
-      {
-        "defense":252,
-        "hp":252,
-        "special-defense": 6
-      }
-    ],
-  "moves": ["Earthquake", "toxic", "protect", "dragon tail"],
-    "item": "rocky helmet"
-  },
-  
-  
-]
+Raichu (F) @ Razor Claw  
+Ability: Lightning Rod  
+Shiny: Yes  
+Tera Type: Grass  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Thunder Punch  
+- Knock Off  
+- Protect  
+- Trailblaze  
+
+Blaziken @ Charcoal  
+Ability: Speed Boost  
+Tera Type: Fire  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Baton Pass  
+- Blaze Kick  
+- Protect  
+- U-turn  
+
+Azumarill (F) @ Sitrus Berry  
+Ability: Huge Power  
+Shiny: Yes  
+Tera Type: Water  
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Play Rough  
+- Aqua Jet  
+- Belly Drum  
+- Aqua Tail  
+
+Magearna @ Assault Vest  
+Ability: Soul-Heart  
+Tera Type: Steel  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Steel Beam  
+- Shadow Ball  
+- Fleur Cannon  
+- Energy Ball  
+
+Garchomp (M) @ Rocky Helmet  
+Ability: Rough Skin  
+Tera Type: Dragon  
+EVs: 252 HP / 252 Def / 4 SpD  
+Jolly Nature  
+- Stealth Rock  
+- Endure  
+- Dragon Tail  
+- Poison Jab  
+
+Clefable @ Toxic Orb  
+Ability: Magic Guard  
+Tera Type: Fairy  
+EVs: 252 HP / 252 SpA / 4 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Calm Mind  
+- Moonblast  
+- Flamethrower  
+- Thunder  
+
