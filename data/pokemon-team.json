@@ -3,6 +3,7 @@
     "pkmNo": 26,
     "pokemon": "Raichu",
     "ability": "linghtning-rod",
+    "nature": "",
     "EVStrat": [
       {
         "attack":252,
@@ -14,9 +15,25 @@
     "item": "quick claw"
   },
   {
+    "pkmNo": 494,
+    "pokemon": "Victini",
+    "ability": "victory-star",
+    "nature": "",
+    "EVStrat": [
+      {
+        "special-attack":252,
+        "speed":252,
+        "hp":6
+      }
+    ],
+  "moves": ["flamethrower", "searing shot", "Psyshock", "Psychic"],
+    "item": "quick claw"
+  },
+  {
     "pkmNo": 184,
     "pokemon": "Azumarill",
     "ability": "huge power",
+    "nature": "",
     "EVStrat": [
       {
         "attack":252,
@@ -26,5 +43,52 @@
     ],
   "moves": ["aqua jet", "play rough", "bellydrum", "liquidation"],
     "item": "sitrus berry"
-  }
+  },
+   {
+    "pkmNo": 184,
+    "pokemon": "Magearna",
+    "ability": "Soul-Heart",
+    "nature": "",
+    "EVStrat": [
+      {
+        "special-attack":252,
+        "speed":252,
+        "hp":6
+      }
+    ],
+  "moves": ["Steel Beam", "Fleur Cannon", "Misty Explosion", "Energy Ball"],
+    "item": "life-orb"
+  },
+   {
+    "pkmNo": 184,
+    "pokemon": "Drapion",
+    "ability": "Snipe",
+    "nature": "",
+    "EVStrat": [
+      {
+        "attack":252,
+        "speed":252,
+        "hp":6
+      }
+    ],
+  "moves": ["Poison Fang", "Crunch", "Cross-Poison", "Leech Life"],
+    "item": "assault vest"
+  },
+  {
+    "pkmNo": 445,
+    "pokemon": "Garchomp",
+    "ability": "rough skin",
+    "nature": "",
+    "EVStrat": [
+      {
+        "defense":252,
+        "hp":252,
+        "special-defense": 6
+      }
+    ],
+  "moves": ["Poison Fang", "Crunch", "Cross-Poison", "Leech Life"],
+    "item": "rocky helmet"
+  },
+  
+  
 ]
